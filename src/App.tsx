@@ -6,7 +6,7 @@ type Row = Record<string,string>;
 
 const API = "https://latam-data-manager-api.nyxaria.workers.dev";
 
-function App(){
+function App({ onLogout }: { onLogout: () => void }){
   const [sources,setSources]=useState<Source[]>(()=>JSON.parse(localStorage.getItem("latam-sources")||"[]"));
   const [active,setActive]=useState("dashboard");
   const [q,setQ]=useState("");
@@ -55,7 +55,7 @@ function App(){
       <div className="label">FONTES</div>
       {sources.map(s=><button className={active===s.id?"sel":""} onClick={()=>setActive(s.id)} key={s.id}><Table2/>{s.name}<ChevronRight className="chev"/></button>)}
       <button onClick={()=>{setResult(null);setModal(true)}} className="connect"><Plus/>Conectar fonte</button>
-      <div className="bottom"><button><Settings/>Configurações</button></div>
+      <div className="bottom"><button><Settings/>Configurações</button><button onClick={onLogout}>Sair</button></div>
     </aside>
     <main>
       <header>
