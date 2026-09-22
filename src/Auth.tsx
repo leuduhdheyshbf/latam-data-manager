@@ -58,7 +58,7 @@ export default function Auth({ onLogin }: { onLogin: () => void }) {
       <div className="auth-glow glow-one" />
       <div className="auth-glow glow-two" />
       <div className="auth-card">
-        <div className="auth-brand"><span>✦</span><b>LATAM</b><small>DATA MANAGER</small></div>
+        <div className="auth-brand"><img src="https://latam.nyxaria.workers.dev/latam-logo.webp" alt="Logo LATAM" /><b>LATAM</b><small>DATA MANAGER</small></div>
         <div className="auth-title">
           <h1>{mode === "login" ? "Bem-vindo de volta" : "Criar sua conta"}</h1>
           <p>{mode === "login" ? "Entre para acessar seu painel de dados." : "Crie uma conta para começar a gerenciar suas fontes."}</p>
